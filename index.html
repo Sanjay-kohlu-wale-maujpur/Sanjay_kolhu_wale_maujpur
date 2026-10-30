@@ -16,6 +16,8 @@
       --border: #e7e5e4;
       --badge-bg: #fef3c7;
       --badge-text: #92400e;
+      --green: #15803d;
+      --green-hover: #166534;
     }
 
     * {
@@ -29,6 +31,7 @@
       background-color: var(--bg);
       color: var(--text);
       line-height: 1.5;
+      padding-bottom: 70px;
     }
 
     header {
@@ -49,13 +52,30 @@
     }
 
     .brand {
-      font-size: 1.35rem;
+      font-size: 1.3rem;
       font-weight: 800;
-      letter-spacing: -0.5px;
       color: var(--primary);
+      text-decoration: none;
     }
 
     .brand span {
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a:hover {
       color: var(--accent);
     }
 
@@ -75,7 +95,7 @@
 
     .hero {
       text-align: center;
-      padding: 4rem 1.5rem 3.5rem;
+      padding: 3.5rem 1.5rem 3rem;
       background: linear-gradient(180deg, #fff 0%, #fef3c7 100%);
       border-bottom: 1px solid var(--border);
     }
@@ -85,7 +105,7 @@
       background: var(--badge-bg);
       color: var(--badge-text);
       font-weight: 700;
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       text-transform: uppercase;
       letter-spacing: 1px;
       padding: 0.35rem 0.85rem;
@@ -95,23 +115,45 @@
     }
 
     .hero h1 {
-      font-size: 2.6rem;
+      font-size: 2.4rem;
       font-weight: 800;
       color: var(--primary);
-      margin-bottom: 0.85rem;
+      margin-bottom: 0.75rem;
       line-height: 1.2;
     }
 
     .hero p {
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       color: #57534e;
       max-width: 620px;
       margin: 0 auto;
     }
 
+    .features-strip {
+      max-width: 1100px;
+      margin: 1.5rem auto 0;
+      padding: 0 1.5rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+
+    .feature-item {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.85rem 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--primary);
+    }
+
     .main-container {
       max-width: 1100px;
-      margin: 2.5rem auto 4rem;
+      margin: 2.5rem auto 3rem;
       padding: 0 1.5rem;
     }
 
@@ -124,7 +166,7 @@
 
     .product-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
       gap: 1.5rem;
     }
 
@@ -140,12 +182,12 @@
 
     .product-card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 12px 20px -4px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 10px 18px -4px rgba(0, 0, 0, 0.08);
     }
 
     .product-img {
       width: 100%;
-      height: 210px;
+      height: 200px;
       object-fit: cover;
       background: #f5f5f4;
     }
@@ -158,23 +200,54 @@
     }
 
     .product-tag {
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       font-weight: 700;
       color: var(--accent);
       text-transform: uppercase;
       letter-spacing: 0.5px;
+      min-height: 1rem;
       margin-bottom: 0.25rem;
     }
 
     .product-name {
       font-size: 1.1rem;
       font-weight: 700;
-      margin-bottom: 0.35rem;
+      margin-bottom: 0.5rem;
       color: var(--primary);
     }
 
+    /* Variant Selector */
+    .variant-selector {
+      margin-bottom: 0.75rem;
+    }
+
+    .variant-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--muted);
+      margin-bottom: 0.35rem;
+      display: block;
+    }
+
+    .variant-select {
+      width: 100%;
+      padding: 0.5rem 0.65rem;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-size: 0.9rem;
+      background: #fafaf9;
+      font-weight: 600;
+      color: var(--text);
+      cursor: pointer;
+      outline: none;
+    }
+
+    .variant-select:focus {
+      border-color: var(--accent);
+    }
+
     .product-price {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       font-weight: 800;
       color: var(--accent);
       margin-bottom: 1rem;
@@ -196,13 +269,98 @@
       background: var(--accent-hover);
     }
 
+    /* Store Info Card */
+    .store-section {
+      max-width: 1100px;
+      margin: 3rem auto;
+      padding: 0 1.5rem;
+    }
+
+    .store-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .store-info h3 {
+      font-size: 1.3rem;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .store-address {
+      font-size: 0.95rem;
+      color: #57534e;
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+
+    .store-timings {
+      font-size: 0.85rem;
+      background: var(--bg);
+      padding: 0.6rem 0.8rem;
+      border-radius: 6px;
+      display: inline-block;
+      margin-bottom: 1rem;
+    }
+
+    .map-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: var(--accent);
+      color: #fff;
+      padding: 0.6rem 1.1rem;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .map-btn:hover {
+      background: var(--accent-hover);
+    }
+
+    /* Floating Cart on Mobile */
+    .mobile-cart-float {
+      display: none;
+      position: fixed;
+      bottom: 16px;
+      left: 16px;
+      right: 16px;
+      background: var(--primary);
+      color: #fff;
+      padding: 0.9rem 1.25rem;
+      border-radius: 50px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+      z-index: 60;
+      font-weight: 700;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      border: none;
+    }
+
+    @media (max-width: 640px) {
+      .mobile-cart-float.show {
+        display: flex;
+      }
+      .nav-links a {
+        display: none;
+      }
+    }
+
     /* Slide-out Cart Drawer */
     .cart-drawer {
       position: fixed;
       top: 0;
       right: -420px;
       width: 100%;
-      max-width: 400px;
+      max-width: 420px;
       height: 100vh;
       background: #fff;
       box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15);
@@ -229,14 +387,13 @@
       border: none;
       font-size: 1.5rem;
       cursor: pointer;
-      line-height: 1;
       color: var(--muted);
     }
 
     .cart-items {
       flex-grow: 1;
       overflow-y: auto;
-      padding: 1.25rem;
+      padding: 1rem 1.25rem;
     }
 
     .cart-item {
@@ -254,17 +411,36 @@
       color: var(--primary);
     }
 
-    .cart-item-meta {
-      font-size: 0.85rem;
-      color: var(--muted);
+    .cart-item-variant {
+      font-size: 0.8rem;
+      color: var(--accent);
+      font-weight: 700;
     }
 
-    .remove-btn {
-      color: #ef4444;
-      background: none;
-      border: none;
+    .qty-controls {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 0.35rem;
+    }
+
+    .qty-btn {
+      background: #f5f5f4;
+      border: 1px solid var(--border);
+      width: 26px;
+      height: 26px;
+      border-radius: 4px;
       cursor: pointer;
-      font-size: 0.85rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .qty-val {
+      font-size: 0.9rem;
+      min-width: 20px;
+      text-align: center;
       font-weight: 600;
     }
 
@@ -272,6 +448,25 @@
       padding: 1.25rem;
       border-top: 1px solid var(--border);
       background: #fbfbfb;
+    }
+
+    .order-inputs {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .order-inputs input {
+      padding: 0.65rem 0.75rem;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-size: 0.85rem;
+      outline: none;
+    }
+
+    .order-inputs input:focus {
+      border-color: var(--accent);
     }
 
     .total-row {
@@ -284,22 +479,23 @@
     }
 
     .checkout-btn {
-      display: block;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.4rem;
       width: 100%;
-      background: #15803d;
+      background: var(--green);
       color: #fff;
-      text-align: center;
       padding: 0.85rem;
       border-radius: 8px;
       font-weight: 700;
-      text-decoration: none;
-      cursor: pointer;
       border: none;
+      cursor: pointer;
       font-size: 0.95rem;
     }
 
     .checkout-btn:hover {
-      background: #166534;
+      background: var(--green-hover);
     }
 
     .overlay {
@@ -316,11 +512,17 @@
 
     footer {
       text-align: center;
-      padding: 2rem 1.5rem;
+      padding: 2.5rem 1.5rem;
       background: #fff;
       border-top: 1px solid var(--border);
       color: var(--muted);
       font-size: 0.9rem;
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
     }
   </style>
 </head>
@@ -328,28 +530,75 @@
 
   <header>
     <div class="nav-container">
-      <div class="brand">Sanjay <span>Kolhu Wale</span></div>
-      <button class="cart-btn" onclick="toggleCart()">
-        🛒 Cart (<span id="cart-count">0</span>)
-      </button>
+      <a href="#" class="brand">Sanjay <span>Kolhu Wale</span></a>
+      <div class="nav-links">
+        <a href="#products">Products</a>
+        <a href="#store-address">Visit Store</a>
+        <button class="cart-btn" onclick="toggleCart()">
+          🛒 Cart (<span id="cart-count">0</span>)
+        </button>
+      </div>
     </div>
   </header>
 
   <section class="hero">
     <span class="badge">Maujpur, Delhi • 100% Shuddh</span>
     <h1>Pure Oils & Desi Ghee</h1>
-    <p>Traditionally wood-pressed (lakdi kolhu) edible oils and pure bilona ghee extracted fresh with zero additives or chemicals.</p>
+    <p>Traditionally wood-pressed (lakdi kolhu) edible oils and pure bilona ghee extracted fresh with zero chemicals or mixing.</p>
   </section>
 
-  <main class="main-container">
-    <h2 class="section-title">Our Pure Offerings</h2>
+  <div class="features-strip">
+    <div class="feature-item">🌱 Pure Wood-Pressed</div>
+    <div class="feature-item">🧈 100% Bilona Desi Ghee</div>
+    <div class="feature-item">📍 Maujpur, Delhi Store Pick & Delivery</div>
+  </div>
+
+  <main class="main-container" id="products">
+    <h2 class="section-title">Our Offerings</h2>
     <div class="product-grid" id="product-grid"></div>
   </main>
 
+  <!-- Store Address Section -->
+  <section class="store-section" id="store-address">
+    <h2 class="section-title">Visit Our Store</h2>
+    <div class="store-card">
+      <div class="store-info">
+        <h3>Sanjay Kolhu Wale</h3>
+        <p class="store-address">
+          Main Market, Maujpur, Shahdara,<br>
+          Near Maujpur-Babarpur Metro Station,<br>
+          Delhi - 110053
+        </p>
+        <div class="store-timings">
+          🕒 <strong>Open All 7 Days:</strong> 8:00 AM – 9:00 PM
+        </div>
+        <div>
+          <a href="https://maps.google.com/?q=Maujpur+Delhi" target="_blank" class="map-btn">
+            📍 View on Google Maps
+          </a>
+        </div>
+      </div>
+      <div>
+        <p style="font-size: 0.95rem; color: #57534e; margin-bottom: 0.5rem;">
+          You can visit our kolhu directly to witness traditional oil extraction in person and purchase freshly pressed oils and ghee.
+        </p>
+        <p style="font-size: 0.9rem; color: var(--muted);">
+          Call or WhatsApp: <a href="tel:+918766268507" style="color: var(--accent); font-weight: 700;">+91 87662 68507</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
   <footer>
-    <p><strong>Sanjay Kolhu Wale</strong> • Maujpur, Delhi</p>
-    <p style="margin-top: 0.25rem;">Freshly extracted cold-pressed oils & traditional dairy products.</p>
+    <p><strong>Sanjay Kolhu Wale</strong> • Maujpur, Delhi - 110053</p>
+    <p style="margin-top: 0.35rem;">Orders & Inquiries: <a href="tel:+918766268507">+91 87662 68507</a></p>
   </footer>
+
+  <!-- Floating Mobile Cart Button -->
+  <button class="mobile-cart-float" id="mobile-cart-float" onclick="toggleCart()">
+    <span>🛒 View Order (<span id="mobile-cart-count">0</span>)</span>
+    <span id="mobile-cart-total">₹0</span>
+  </button>
 
   <!-- Cart Overlay & Drawer -->
   <div class="overlay" id="overlay" onclick="toggleCart()"></div>
@@ -358,89 +607,146 @@
       <h3>Your Order</h3>
       <button class="close-cart" onclick="toggleCart()">&times;</button>
     </div>
+    
     <div class="cart-items" id="cart-items">
       <p style="color: var(--muted); text-align: center; margin-top: 2rem;">Your cart is empty.</p>
     </div>
+
     <div class="cart-footer">
+      <div class="order-inputs">
+        <input type="text" id="cust-name" placeholder="Your Name" />
+        <input type="text" id="cust-address" placeholder="Delivery Address / Area (e.g. Maujpur, Yamuna Vihar)" />
+      </div>
+
       <div class="total-row">
         <span>Total:</span>
         <span id="cart-total">₹0</span>
       </div>
-      <button class="checkout-btn" onclick="checkoutWhatsApp()">Order on WhatsApp</button>
+      <button class="checkout-btn" onclick="checkoutWhatsApp()">
+        <span>Place Order on WhatsApp</span>
+      </button>
     </div>
   </aside>
 
   <script>
-    // 1. Oil and Ghee Product Catalog
+    // Product Catalog with quantity variants
     const products = [
       {
         id: 1,
         tag: "",
         name: "Black Mustard Oil",
-        volume: "1 Litre",
-        price: 195,
-        image: "https://www.sanjaykohluwale.com/cdn/shop/files/SUM07465.jpg?v=1716491318&width=600"
+        image: "https://www.sanjaykohluwale.com/cdn/shop/files/SUM07465.jpg?v=1716491318&width=600",
+        variants: [
+          { size: "500 g", price: 105 },
+          { size: "1 Litre", price: 195 },
+          { size: "1 Kg", price: 210 },
+          { size: "2 Litre", price: 390 },
+          { size: "2 Kg", price: 420 },
+          { size: "5 Litre", price: 975 },
+          { size: "5 Kg", price: 1050 },
+          { size: "15 kg", price: 3150 }
+        ]
       },
       {
         id: 2,
-        tag: "",
-        name: "Black Mustard Oil",
-        volume: "1 Kg",
-        price: 210,
-        image: "https://www.sanjaykohluwale.com/cdn/shop/files/SUM07465.jpg?v=1716491318&width=600"
+        tag: "Wood Pressed",
+        name: "Sesame Oil (Til Tel)",
+        image: "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=500&auto=format&fit=crop&q=60",
+        variants: [
+          { size: "250 ml", price: 95 },
+          { size: "500 ml", price: 185 },
+          { size: "1 Litre", price: 360 }
+        ]
       },
       {
         id: 3,
-        tag: "Wood Pressed",
-        name: "Sesame Oil (Til Tel)",
-        volume: "1 Litre",
-        price: 360,
-        image: "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=500&auto=format&fit=crop&q=60"
+        tag: "Virgin & Unrefined",
+        name: "Virgin Coconut Oil",
+        image: "https://images.unsplash.com/photo-1526947425960-945c6e72858f?w=500&auto=format&fit=crop&q=60",
+        variants: [
+          { size: "200 ml", price: 105 },
+          { size: "500 ml", price: 240 },
+          { size: "1 Litre", price: 460 }
+        ]
       },
       {
         id: 4,
-        tag: "Virgin & Unrefined",
-        name: "Virgin Coconut Oil",
-        volume: "500 ml",
-        price: 240,
-        image: "https://images.unsplash.com/photo-1526947425960-945c6e72858f?w=500&auto=format&fit=crop&q=60"
+        tag: "Nutrient Rich",
+        name: "Groundnut Oil (Mungfali Tel)",
+        image: "https://images.unsplash.com/photo-1589927986089-35812388d1f4?w=500&auto=format&fit=crop&q=60",
+        variants: [
+          { size: "500 ml", price: 115 },
+          { size: "1 Litre", price: 220 },
+          { size: "5 Litre", price: 1050 }
+        ]
       },
       {
         id: 5,
-        tag: "Nutrient Rich",
-        name: "Groundnut Oil (Mungfali)",
-        volume: "1 Litre",
-        price: 220,
-        image: "https://images.unsplash.com/photo-1589927986089-35812388d1f4?w=500&auto=format&fit=crop&q=60"
+        tag: "Traditional Dairy",
+        name: "Pure Buffalo Ghee",
+        image: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=500&auto=format&fit=crop&q=60",
+        variants: [
+          { size: "500 gm", price: 370 },
+          { size: "1 Kg", price: 720 }
+        ]
       },
       {
         id: 6,
         tag: "Traditional Dairy",
-        name: "Pure Buffalo Ghee",
-        volume: "1 Kg",
-        price: 720,
-        image: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=500&auto=format&fit=crop&q=60"
+        name: "Pure Desi Cow Ghee (A2 Bilona)",
+        image: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=500&auto=format&fit=crop&q=60",
+        variants: [
+          { size: "500 gm", price: 650 },
+          { size: "1 Kg", price: 1250 }
+        ]
       }
     ];
 
-    // 2. Put your WhatsApp mobile number here (with 91 country code, no + or spaces)
     const WHATSAPP_NUMBER = "918766268507"; 
-
     let cart = [];
+
+    // Track chosen variant index per product (default to index 0)
+    let selectedVariants = {};
+    products.forEach(p => {
+      selectedVariants[p.id] = 0;
+    });
 
     function renderProducts() {
       const grid = document.getElementById("product-grid");
-      grid.innerHTML = products.map(item => `
-        <article class="product-card">
-          <img src="${item.image}" alt="${item.name}" class="product-img" loading="lazy">
-          <div class="product-details">
-            <span class="product-tag">${item.tag}</span>
-            <h3 class="product-name">${item.name} (${item.volume})</h3>
-            <div class="product-price">₹${item.price}</div>
-            <button class="add-to-cart-btn" onclick="addToCart(${item.id})">Add to Order</button>
-          </div>
-        </article>
-      `).join("");
+      grid.innerHTML = products.map(item => {
+        const currentVariant = item.variants[selectedVariants[item.id]];
+        return `
+          <article class="product-card">
+            <img src="${item.image}" alt="${item.name}" class="product-img" loading="lazy" onerror="this.style.display='none'">
+            <div class="product-details">
+              <span class="product-tag">${item.tag || ""}</span>
+              <h3 class="product-name">${item.name}</h3>
+              
+              <div class="variant-selector">
+                <label class="variant-label">Choose Quantity / Pack:</label>
+                <select class="variant-select" onchange="changeVariant(${item.id}, this.value)">
+                  ${item.variants.map((v, idx) => `
+                    <option value="${idx}" ${idx === selectedVariants[item.id] ? 'selected' : ''}>
+                      ${v.size} — ₹${v.price}
+                    </option>
+                  `).join("")}
+                </select>
+              </div>
+
+              <div class="product-price" id="price-display-${item.id}">₹${currentVariant.price}</div>
+              <button class="add-to-cart-btn" onclick="addToCart(${item.id})">Add to Order</button>
+            </div>
+          </article>
+        `;
+      }).join("");
+    }
+
+    function changeVariant(productId, variantIndex) {
+      variantIndex = parseInt(variantIndex, 10);
+      selectedVariants[productId] = variantIndex;
+      const product = products.find(p => p.id === productId);
+      const selected = product.variants[variantIndex];
+      document.getElementById(`price-display-${productId}`).textContent = `₹${selected.price}`;
     }
 
     function toggleCart() {
@@ -448,35 +754,66 @@
       document.getElementById("overlay").classList.toggle("open");
     }
 
-    function addToCart(id) {
-      const existing = cart.find(item => item.id === id);
+    function addToCart(productId) {
+      const product = products.find(p => p.id === productId);
+      const variantIdx = selectedVariants[productId];
+      const variant = product.variants[variantIdx];
+
+      // Unique cart identifier based on product and selected variant size
+      const cartItemId = `${productId}-${variant.size}`;
+      const existing = cart.find(item => item.cartId === cartItemId);
+
       if (existing) {
         existing.qty += 1;
       } else {
-        const product = products.find(p => p.id === id);
-        cart.push({ ...product, qty: 1 });
+        cart.push({
+          cartId: cartItemId,
+          id: product.id,
+          name: product.name,
+          size: variant.size,
+          price: variant.price,
+          qty: 1
+        });
       }
+
       updateCartUI();
       document.getElementById("cart-drawer").classList.add("open");
       document.getElementById("overlay").classList.add("open");
     }
 
-    function removeFromCart(id) {
-      cart = cart.filter(item => item.id !== id);
+    function changeQty(cartId, delta) {
+      const item = cart.find(i => i.cartId === cartId);
+      if (!item) return;
+
+      item.qty += delta;
+      if (item.qty <= 0) {
+        cart = cart.filter(i => i.cartId !== cartId);
+      }
       updateCartUI();
     }
 
     function updateCartUI() {
       const countEl = document.getElementById("cart-count");
+      const mobileCountEl = document.getElementById("mobile-cart-count");
       const itemsContainer = document.getElementById("cart-items");
       const totalEl = document.getElementById("cart-total");
+      const mobileTotalEl = document.getElementById("mobile-cart-total");
+      const mobileBar = document.getElementById("mobile-cart-float");
 
       const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
       countEl.textContent = totalItems;
+      mobileCountEl.textContent = totalItems;
+
+      if (totalItems > 0) {
+        mobileBar.classList.add("show");
+      } else {
+        mobileBar.classList.remove("show");
+      }
 
       if (cart.length === 0) {
         itemsContainer.innerHTML = `<p style="color: var(--muted); text-align: center; margin-top: 2rem;">Your cart is empty.</p>`;
         totalEl.textContent = "₹0";
+        mobileTotalEl.textContent = "₹0";
         return;
       }
 
@@ -488,17 +825,20 @@
           <div class="cart-item">
             <div>
               <div class="cart-item-title">${item.name}</div>
-              <div class="cart-item-meta">₹${item.price} × ${item.qty}</div>
+              <div class="cart-item-variant">${item.size} • ₹${item.price} each</div>
+              <div class="qty-controls">
+                <button class="qty-btn" onclick="changeQty('${item.cartId}', -1)">-</button>
+                <span class="qty-val">${item.qty}</span>
+                <button class="qty-btn" onclick="changeQty('${item.cartId}', 1)">+</button>
+              </div>
             </div>
-            <div style="display: flex; align-items: center; gap: 0.75rem;">
-              <strong>₹${itemTotal}</strong>
-              <button class="remove-btn" onclick="removeFromCart(${item.id})">✕</button>
-            </div>
+            <strong>₹${itemTotal}</strong>
           </div>
         `;
       }).join("");
 
       totalEl.textContent = `₹${totalPrice}`;
+      mobileTotalEl.textContent = `₹${totalPrice}`;
     }
 
     function checkoutWhatsApp() {
@@ -507,16 +847,24 @@
         return;
       }
 
+      const name = document.getElementById("cust-name").value.trim();
+      const address = document.getElementById("cust-address").value.trim();
+
       let orderText = "*New Order - Sanjay Kolhu Wale (Maujpur)*%0A%0A";
       let total = 0;
 
       cart.forEach((item, index) => {
         const lineTotal = item.price * item.qty;
         total += lineTotal;
-        orderText += `${index + 1}. ${item.name} (${item.volume}) x ${item.qty} = ₹${lineTotal}%0A`;
+        orderText += `${index + 1}. ${item.name} (${item.size}) x ${item.qty} = ₹${lineTotal}%0A`;
       });
 
-      orderText += `%0A*Total Amount: ₹${total}*%0A%0APlease confirm availability and delivery details.`;
+      orderText += `%0A*Total Amount: ₹${total}*%0A`;
+
+      if (name) orderText += `%0A*Name:* ${encodeURIComponent(name)}`;
+      if (address) orderText += `%0A*Address:* ${encodeURIComponent(address)}`;
+
+      orderText += `%0A%0APlease confirm my order and share delivery / pickup details.`;
 
       const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${orderText}`;
       window.open(url, "_blank");
