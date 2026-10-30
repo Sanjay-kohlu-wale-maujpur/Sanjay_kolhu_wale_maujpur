@@ -3,17 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Artisan Goods | Official Store</title>
+  <title>Sanjay Kolhu Wale | Pure Oils & Desi Ghee</title>
   <style>
     :root {
-      --primary: #111827;
-      --accent: #2563eb;
-      --accent-hover: #1d4ed8;
-      --bg: #f9fafb;
+      --primary: #1c1917;
+      --accent: #b45309;
+      --accent-hover: #92400e;
+      --bg: #fffbeb;
       --card-bg: #ffffff;
-      --text: #1f2937;
-      --muted: #6b7280;
-      --border: #e5e7eb;
+      --text: #292524;
+      --muted: #78716c;
+      --border: #e7e5e4;
+      --badge-bg: #fef3c7;
+      --badge-text: #92400e;
     }
 
     * {
@@ -48,16 +50,20 @@
 
     .brand {
       font-size: 1.35rem;
-      font-weight: 700;
+      font-weight: 800;
       letter-spacing: -0.5px;
       color: var(--primary);
+    }
+
+    .brand span {
+      color: var(--accent);
     }
 
     .cart-btn {
       background: var(--primary);
       color: #fff;
       border: none;
-      padding: 0.5rem 1rem;
+      padding: 0.55rem 1.15rem;
       border-radius: 9999px;
       cursor: pointer;
       font-size: 0.9rem;
@@ -69,23 +75,37 @@
 
     .hero {
       text-align: center;
-      padding: 4rem 1.5rem 3rem;
-      background: #fff;
+      padding: 4rem 1.5rem 3.5rem;
+      background: linear-gradient(180deg, #fff 0%, #fef3c7 100%);
       border-bottom: 1px solid var(--border);
     }
 
+    .hero .badge {
+      display: inline-block;
+      background: var(--badge-bg);
+      color: var(--badge-text);
+      font-weight: 700;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 0.35rem 0.85rem;
+      border-radius: 9999px;
+      margin-bottom: 1rem;
+      border: 1px solid #fde68a;
+    }
+
     .hero h1 {
-      font-size: 2.5rem;
+      font-size: 2.6rem;
       font-weight: 800;
       color: var(--primary);
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.85rem;
       line-height: 1.2;
     }
 
     .hero p {
       font-size: 1.1rem;
-      color: var(--muted);
-      max-width: 600px;
+      color: #57534e;
+      max-width: 620px;
       margin: 0 auto;
     }
 
@@ -97,8 +117,9 @@
 
     .section-title {
       font-size: 1.5rem;
-      font-weight: 700;
+      font-weight: 800;
       margin-bottom: 1.5rem;
+      color: var(--primary);
     }
 
     .product-grid {
@@ -110,7 +131,7 @@
     .product-card {
       background: var(--card-bg);
       border: 1px solid var(--border);
-      border-radius: 10px;
+      border-radius: 12px;
       overflow: hidden;
       display: flex;
       flex-direction: column;
@@ -118,15 +139,15 @@
     }
 
     .product-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 20px -4px rgba(0, 0, 0, 0.08);
     }
 
     .product-img {
       width: 100%;
-      height: 200px;
+      height: 210px;
       object-fit: cover;
-      background: #f3f4f6;
+      background: #f5f5f4;
     }
 
     .product-details {
@@ -136,15 +157,25 @@
       flex-grow: 1;
     }
 
+    .product-tag {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.25rem;
+    }
+
     .product-name {
-      font-size: 1.05rem;
-      font-weight: 600;
+      font-size: 1.1rem;
+      font-weight: 700;
       margin-bottom: 0.35rem;
+      color: var(--primary);
     }
 
     .product-price {
-      font-size: 1.15rem;
-      font-weight: 700;
+      font-size: 1.2rem;
+      font-weight: 800;
       color: var(--accent);
       margin-bottom: 1rem;
     }
@@ -154,15 +185,15 @@
       background: var(--primary);
       color: #fff;
       border: none;
-      padding: 0.65rem;
-      border-radius: 6px;
+      padding: 0.7rem;
+      border-radius: 8px;
       cursor: pointer;
       font-weight: 600;
       transition: background 0.15s ease;
     }
 
     .add-to-cart-btn:hover {
-      background: #374151;
+      background: var(--accent-hover);
     }
 
     /* Slide-out Cart Drawer */
@@ -199,6 +230,7 @@
       font-size: 1.5rem;
       cursor: pointer;
       line-height: 1;
+      color: var(--muted);
     }
 
     .cart-items {
@@ -219,6 +251,7 @@
     .cart-item-title {
       font-weight: 600;
       font-size: 0.95rem;
+      color: var(--primary);
     }
 
     .cart-item-meta {
@@ -232,38 +265,41 @@
       border: none;
       cursor: pointer;
       font-size: 0.85rem;
+      font-weight: 600;
     }
 
     .cart-footer {
       padding: 1.25rem;
       border-top: 1px solid var(--border);
-      background: #f9fafb;
+      background: #fbfbfb;
     }
 
     .total-row {
       display: flex;
       justify-content: space-between;
-      font-size: 1.1rem;
-      font-weight: 700;
+      font-size: 1.15rem;
+      font-weight: 800;
       margin-bottom: 1rem;
+      color: var(--primary);
     }
 
     .checkout-btn {
       display: block;
       width: 100%;
-      background: #16a34a;
+      background: #15803d;
       color: #fff;
       text-align: center;
       padding: 0.85rem;
-      border-radius: 6px;
+      border-radius: 8px;
       font-weight: 700;
       text-decoration: none;
       cursor: pointer;
       border: none;
+      font-size: 0.95rem;
     }
 
     .checkout-btn:hover {
-      background: #15803d;
+      background: #166534;
     }
 
     .overlay {
@@ -277,13 +313,22 @@
     .overlay.open {
       display: block;
     }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1.5rem;
+      background: #fff;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
   </style>
 </head>
 <body>
 
   <header>
     <div class="nav-container">
-      <div class="brand">My Shop</div>
+      <div class="brand">Sanjay <span>Kolhu Wale</span></div>
       <button class="cart-btn" onclick="toggleCart()">
         🛒 Cart (<span id="cart-count">0</span>)
       </button>
@@ -291,20 +336,26 @@
   </header>
 
   <section class="hero">
-    <h1>Handcrafted Essentials</h1>
-    <p>Discover our curated collection of everyday pieces made with care and intention.</p>
+    <span class="badge">Maujpur, Delhi • 100% Shuddh</span>
+    <h1>Pure Oils & Desi Ghee</h1>
+    <p>Traditionally wood-pressed (lakdi kolhu) edible oils and pure bilona ghee extracted fresh with zero additives or chemicals.</p>
   </section>
 
   <main class="main-container">
-    <h2 class="section-title">Featured Products</h2>
+    <h2 class="section-title">Our Pure Offerings</h2>
     <div class="product-grid" id="product-grid"></div>
   </main>
+
+  <footer>
+    <p><strong>Sanjay Kolhu Wale</strong> • Maujpur, Delhi</p>
+    <p style="margin-top: 0.25rem;">Freshly extracted cold-pressed oils & traditional dairy products.</p>
+  </footer>
 
   <!-- Cart Overlay & Drawer -->
   <div class="overlay" id="overlay" onclick="toggleCart()"></div>
   <aside class="cart-drawer" id="cart-drawer">
     <div class="cart-header">
-      <h3>Your Cart</h3>
+      <h3>Your Order</h3>
       <button class="close-cart" onclick="toggleCart()">&times;</button>
     </div>
     <div class="cart-items" id="cart-items">
@@ -313,42 +364,66 @@
     <div class="cart-footer">
       <div class="total-row">
         <span>Total:</span>
-        <span id="cart-total">$0.00</span>
+        <span id="cart-total">₹0</span>
       </div>
-      <button class="checkout-btn" onclick="checkoutWhatsApp()">Checkout via WhatsApp</button>
+      <button class="checkout-btn" onclick="checkoutWhatsApp()">Order on WhatsApp</button>
     </div>
   </aside>
 
   <script>
-    // 1. Put your products here
+    // 1. Oil and Ghee Product Catalog
     const products = [
       {
         id: 1,
-        name: "Black mustard oil 1L",
-        price: 195.00,
-        image: "https://images.unsplash.com/photo-1544816155-12df9643f363?w=500&auto=format&fit=crop&q=60"
+        tag: "",
+        name: "Black Mustard Oil",
+        volume: "1 Litre",
+        price: 195,
+        image: "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=500&auto=format&fit=crop&q=60"
       },
       {
         id: 2,
-        name: "Ceramic Coffee Mug",
-        price: 18.00,
-        image: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=500&auto=format&fit=crop&q=60"
+        tag: "Traditional Bilona",
+        name: "Pure Desi Cow Ghee",
+        volume: "1 Kg",
+        price: 850,
+        image: "https://images.unsplash.com/photo-1628088062854-d1870b4553da?w=500&auto=format&fit=crop&q=60"
       },
       {
         id: 3,
-        name: "Minimalist Notebook",
-        price: 12.50,
-        image: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=500&auto=format&fit=crop&q=60"
+        tag: "Wood Pressed",
+        name: "Sesame Oil (Til Tel)",
+        volume: "1 Litre",
+        price: 360,
+        image: "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=500&auto=format&fit=crop&q=60"
       },
       {
         id: 4,
-        name: "Soy Wax Candle",
-        price: 20.00,
-        image: "https://images.unsplash.com/photo-1603006905003-be475563bc59?w=500&auto=format&fit=crop&q=60"
+        tag: "Virgin & Unrefined",
+        name: "Virgin Coconut Oil",
+        volume: "500 ml",
+        price: 240,
+        image: "https://images.unsplash.com/photo-1526947425960-945c6e72858f?w=500&auto=format&fit=crop&q=60"
+      },
+      {
+        id: 5,
+        tag: "Nutrient Rich",
+        name: "Groundnut Oil (Mungfali)",
+        volume: "1 Litre",
+        price: 220,
+        image: "https://images.unsplash.com/photo-1589927986089-35812388d1f4?w=500&auto=format&fit=crop&q=60"
+      },
+      {
+        id: 6,
+        tag: "Traditional Dairy",
+        name: "Pure Buffalo Ghee",
+        volume: "1 Kg",
+        price: 720,
+        image: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=500&auto=format&fit=crop&q=60"
       }
     ];
 
-    // 2. Set your phone number for orders (international format without + or spaces)
+    // 2. Put your WhatsApp mobile number here (with 91 country code, no + or spaces)
     const WHATSAPP_NUMBER = "918766268507"; 
 
     let cart = [];
@@ -359,9 +434,10 @@
         <article class="product-card">
           <img src="${item.image}" alt="${item.name}" class="product-img" loading="lazy">
           <div class="product-details">
-            <h3 class="product-name">${item.name}</h3>
-            <div class="product-price">$${item.price.toFixed(2)}</div>
-            <button class="add-to-cart-btn" onclick="addToCart(${item.id})">Add to Cart</button>
+            <span class="product-tag">${item.tag}</span>
+            <h3 class="product-name">${item.name} (${item.volume})</h3>
+            <div class="product-price">₹${item.price}</div>
+            <button class="add-to-cart-btn" onclick="addToCart(${item.id})">Add to Order</button>
           </div>
         </article>
       `).join("");
@@ -381,7 +457,6 @@
         cart.push({ ...product, qty: 1 });
       }
       updateCartUI();
-      // Auto open cart drawer
       document.getElementById("cart-drawer").classList.add("open");
       document.getElementById("overlay").classList.add("open");
     }
@@ -401,7 +476,7 @@
 
       if (cart.length === 0) {
         itemsContainer.innerHTML = `<p style="color: var(--muted); text-align: center; margin-top: 2rem;">Your cart is empty.</p>`;
-        totalEl.textContent = "$0.00";
+        totalEl.textContent = "₹0";
         return;
       }
 
@@ -413,17 +488,17 @@
           <div class="cart-item">
             <div>
               <div class="cart-item-title">${item.name}</div>
-              <div class="cart-item-meta">$${item.price.toFixed(2)} × ${item.qty}</div>
+              <div class="cart-item-meta">₹${item.price} × ${item.qty}</div>
             </div>
             <div style="display: flex; align-items: center; gap: 0.75rem;">
-              <strong>$${itemTotal.toFixed(2)}</strong>
+              <strong>₹${itemTotal}</strong>
               <button class="remove-btn" onclick="removeFromCart(${item.id})">✕</button>
             </div>
           </div>
         `;
       }).join("");
 
-      totalEl.textContent = `$${totalPrice.toFixed(2)}`;
+      totalEl.textContent = `₹${totalPrice}`;
     }
 
     function checkoutWhatsApp() {
@@ -432,24 +507,22 @@
         return;
       }
 
-      let orderText = "Hello! I'd like to place an order:%0A%0A";
+      let orderText = "*New Order - Sanjay Kolhu Wale (Maujpur)*%0A%0A";
       let total = 0;
 
       cart.forEach((item, index) => {
         const lineTotal = item.price * item.qty;
         total += lineTotal;
-        orderText += `${index + 1}. ${item.name} (x${item.qty}) - $${lineTotal.toFixed(2)}%0A`;
+        orderText += `${index + 1}. ${item.name} (${item.volume}) x ${item.qty} = ₹${lineTotal}%0A`;
       });
 
-      orderText += `%0A*Total: $${total.toFixed(2)}*`;
+      orderText += `%0A*Total Amount: ₹${total}*%0A%0APlease confirm availability and delivery details.`;
 
       const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${orderText}`;
       window.open(url, "_blank");
     }
 
-    // Render products on page load
     renderProducts();
   </script>
 </body>
 </html>
-
